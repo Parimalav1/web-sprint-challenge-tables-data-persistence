@@ -1,6 +1,7 @@
 const express = require('express');
 
 const Resources = require('./resource-model.js');
+const projectsDb = require("../db-config.js");
 
 const router = express.Router();
 
@@ -28,6 +29,17 @@ router.get('/:id', (req, res) => {
         .catch(err => {
             res.status(500).json({ message: 'Failed to get resource' });
         });
+});
+
+router.get('/:id/projects', (req, res) => {
+    const { id } = req.params;// this is resource id
+    Resources.findProjects(id)
+    .then(projects => {
+        res.status(200).json(projects);
+    })
+    .catch(err => {
+        res.status(500).json({ message: 'Failed to find projects' });
+    });
 });
 
 router.post('/', (req, res) => {

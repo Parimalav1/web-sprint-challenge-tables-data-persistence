@@ -31,6 +31,18 @@ router.get('/:id', (req, res) => {
   });
 });
 
+router.get('/:id/resources', (req, res) => {
+  const { id } = req.params;
+
+  Projects.findResources(id)
+  .then(rscs => {
+    res.json(rscs);
+  })
+  .catch(err => {
+    res.status(500).json({ message: 'Failed to get resources' });
+  });
+});
+
 router.get('/:id/tasks', (req, res) => {
   const { id } = req.params;
 

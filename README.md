@@ -47,12 +47,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between `Relational Databases` and `SQL`.
+    In relational databases, the data is stored in tabular format grouped into rows and columns (similar to spreadsheets). A collection of rows is called a table. Each row represents a single record in the table and is made up of one or more columns.
+    These kinds of databases are called relational because a relation is a mathematical idea that is equivalent to a table. So relational databases are databases that store their data in tables.
+    An RDBMS is a Relational Database Management System to retrieve and store data.
 
+    SQL, the Structured Query Language, is a language (or a family of closely related languages or dialects) which is typically used to query the RDBMS.
+    SQL is relational database specific.(not for document and graph databases). Four critical SQL commands are SELECT, INSERT, UPDATE, and DELETE.
+    
+     
 2. Why do tables need a `primary key`?
+    A primary key is a way to identify each entry in the database uniquely. It is most often represented as a auto-incrementing integer called id or [tablename]Id. Tables need a primary key to identify them. 
 
 3. What is the name given to a table column that references the primary key on another table.
+    Foreign key
 
 4. What do we need in order to have a _many to many_ relationship between two tables.
+    Add a third table called junction or intermediary table that holds foreign keys that reference the primary key on the related tables with extra information.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
