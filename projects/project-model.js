@@ -1,5 +1,5 @@
 const projectsDb = require("../db-config.js");
-const resourcesDb = require("../db-config.js");
+const TasksDb = require("../db-config.js");
 
 // above the fold
 module.exports = {
@@ -30,7 +30,7 @@ function findTasks(id) {
     return getById(id)
         .then(project => {
             if (project) {
-                return projectsDb('projects').where({ project_id: id })
+                return TasksDb('tasks').where({ project_id: id })
                     .then(tasks => {
                         return tasks.map(x => addProjectInfo2Task(x, project.name, project.description))
                     })
